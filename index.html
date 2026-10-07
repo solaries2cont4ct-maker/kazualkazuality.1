@@ -10,31 +10,30 @@
 <body class="is-home">
 
   <!-- =====================================================
-       PLANO DE FUNDO MULTIMÍDIA (VÍDEO / GIF / JPG / PNG)
+       PLANO DE FUNDO INFINITO (VÍDEO / GIF / JPG / PNG)
        ===================================================== -->
   <div class="site-bg" id="siteBg" aria-hidden="true">
-    <!-- 
-      COMO ESCOLHER O FORMATO DO FUNDO:
-      
-      1. PARA VÍDEO (MP4 / WEBM):
-         Descomente a tag <video> e comente a tag <img>:
-      
-      <video class="bg-media" autoplay muted loop playsinline>
-        <source src="backgrounds/video.mp4" type="video/mp4">
-      </video>
-      
-      2. PARA GIF ANIMADO OU IMAGEM (JPG / PNG):
-         Use a tag <img> apontando para seu arquivo:
-    -->
-    <img class="bg-media" src="backgrounds/fundo-exemplo.jpg" alt="Plano de Fundo">
+    
+    <!-- Trilho de repetição contínua para fundo infinito -->
+    <div class="bg-track" id="bgTrack">
+      <div class="bg-tile bg-tile-prev">
+        <img class="bg-media" src="backgrounds/fundo-exemplo.jpg" alt="Plano de Fundo">
+      </div>
+      <div class="bg-tile bg-tile-curr">
+        <img class="bg-media" src="backgrounds/fundo-exemplo.jpg" alt="Plano de Fundo">
+      </div>
+      <div class="bg-tile bg-tile-next">
+        <img class="bg-media" src="backgrounds/fundo-exemplo.jpg" alt="Plano de Fundo">
+      </div>
+    </div>
 
-    <!-- Película translúcida suave para manter leitura nítida (opacidade regulável no style.css) -->
+    <!-- Película suave para leitura apenas quando abrir abas de conteúdo -->
     <div class="bg-overlay"></div>
   </div>
 
 
   <!-- =====================================================
-       CABEÇALHO SUPERIOR (LINKS DAS ABAS NA PARTE SUPERIOR)
+       CABEÇALHO SUPERIOR (SEM LINHA DIVISÓRIA, FUNDO TOTALMENTE TRANSPARENTE)
        ===================================================== -->
   <header class="site-header">
     <a class="artist-name" href="#home" title="Voltar ao início">Solaries Schuster</a>
