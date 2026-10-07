@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solaries Schuster — kazualkazuality</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="is-home">
+
+  <!-- =====================================================
+       PLANO DE FUNDO MULTIMÍDIA (VÍDEO / GIF / JPG / PNG)
+       ===================================================== -->
+  <div class="site-bg" id="siteBg" aria-hidden="true">
+
+    <!-- 
+      COMO ESCOLHER O FORMATO DO FUNDO:
+      
+      1. PARA VÍDEO (MP4 / WEBM):
+         Descomente o bloco <video> abaixo e comente o bloco <img>:
+      
+      <video class="bg-media" autoplay muted loop playsinline>
+        <source src="backgrounds/video.mp4" type="video/mp4">
+      </video>
+      
+      2. PARA GIF ANIMADO OU IMAGEM (JPG / PNG):
+         Use a tag <img> apontando para seu arquivo:
+    -->
+    <img class="bg-media" src="backgrounds/fundo-exemplo.jpg" alt="Plano de Fundo">
+
+    <!-- Camada sutil para assegurar leitura nítida (opacidade ajustável no style.css) -->
+    <div class="bg-overlay"></div>
+  </div>
+
+
+  <!-- =====================================================
+       CABEÇALHO SUPERIOR (SEMPRE VISÍVEL)
+       ===================================================== -->
+  <header class="site-header">
+    <a class="artist-name" href="#home" title="Voltar ao início">Solaries Schuster</a>
+
+    <nav class="main-nav">
+      <a href="#trabalhos" class="nav-link" data-tab="trabalhos">trabalhos</a>
+      <a href="#catalogo" class="nav-link" data-tab="catalogo">catálogo</a>
+      <a href="#sobre" class="nav-link" data-tab="sobre">sobre</a>
+    </nav>
+  </header>
+
+
+  <!-- =====================================================
+       CONTEÚDO PRINCIPAL (ABAS E SEÇÕES)
+       ===================================================== -->
+  <main id="mainContent" class="main-content">
+
+    <button id="closeTabBtn" class="close-tab-btn" aria-label="Fechar aba e voltar ao início" title="Fechar">×</button>
+
+    <!-- =====================================================
+         ABA: TRABALHOS
+         ===================================================== -->
+    <section id="trabalhos" class="tab-pane">
+
+      <!-- SUB-NAVEGAÇÃO INTERNA DE TRABALHOS -->
+      <nav class="sub-nav" aria-label="Subcategorias de trabalhos">
+        <a href="#trabalhos-desenhos" class="sub-link active" data-sub="desenhos">desenhos</a>
+        <a href="#trabalhos-videos" class="sub-link" data-sub="videos">vídeos</a>
+        <a href="#trabalhos-livros" class="sub-link" data-sub="livros">livros</a>
+        <a href="#trabalhos-escritos" class="sub-link" data-sub="escritos">escritos</a>
+      </nav>
+
+      <!-- 1. SUB-SEÇÃO: DESENHOS / OBRAS -->
+      <div id="sub-desenhos" class="sub-pane active">
+        <div class="works-grid">
+
+          <!-- OBRA 01 -->
+          <figure class="work work-large">
+            <a href="#obra-01" class="work-image">
+              <img src="imagens/image (4).png" alt="S/T, 2026" loading="lazy">
+            </a>
+            <figcaption>
+              <i>S/T</i>, 2026<br>
+              desenho, lápis pastel / 170x1143px
+            </figcaption>
+          </figure>
+
+          <!-- OBRA 02 -->
+          <figure class="work work-small">
+            <a href="#obra-02" class="work-image">
+              <img src="imagens/image (3).png" alt="S/T, 2026" loading="lazy">
+            </a>
+            <figcaption>
+              <i>S/T</i>, 2026<br>
+              desenho, lápis pastel / 681x1134px
+            </figcaption>
+          </figure>
+
+          <!-- OBRA 03 -->
+          <figure class="work work-wide">
+            <a href="#obra-03" class="work-image">
+              <img src="imagens/IMG_0204.jpg" alt="S/T, 2024" loading="lazy">
+            </a>
+            <figcaption>
+              <i>S/T</i>, 2024<br>
+              desenho, lápis 8b / 1242x1305px
+            </figcaption>
+          </figure>
+
+          <!-- OBRA 04 -->
+          <figure class="work work-medium">
+            <a href="#obra-04" class="work-image">
+              <img src="imagens/img005.jpg" alt="S/T, 2025" loading="lazy">
+            </a>
+            <figcaption>
+              <i>S/T</i>, 2025<br>
+              desenho, lápis 8b / 5871x4176px
+            </figcaption>
+          </figure>
+
+          <!-- OBRA 05 -->
+          <figure class="work work-offset">
+            <a href="#obra-05" class="work-image">
+              <img src="imagens/img033.jpg" alt="S/T, 2025" loading="lazy">
+            </a>
+            <figcaption>
+              <i>S/T</i>, 2025<br>
+              desenho, lápis 8b / 3047x3184px
+            </figcaption>
+          </figure>
+
+          <!-- OBRA 06 -->
+          <figure class="work work-large-right">
+            <a href="#obra-06" class="work-image">
+              <img src="imagens/img032 (1).jpg" alt="S/T, 2024" loading="lazy">
+            </a>
+            <figcaption>
+              <i>S/T</i>, 2024<br>
+              desenho, lápis 8b / 2959x3408px
+            </figcaption>
+          </figure>
+
+          <!-- OBRA 07 -->
+          <figure class="work work-large-right">
+            <a href="#obra-07" class="work-image">
+              <img src="imagens/IMG_0203.jpg" alt="chão 250324, 2024" loading="lazy">
+            </a>
+            <figcaption>
+              <i>chão 250324</i>, 2024<br>
+              desenho digital / 1242x123px
+            </figcaption>
+          </figure>
+
+          <!-- OBRA 08 -->
+          <figure class="work work-large-right">
+            <a href="#obra-08" class="work-image">
+              <img src="imagens/IMG_0202.jpg" alt="chão 250324, 2024" loading="lazy">
+            </a>
+            <figcaption>
+              <i>chão 250324</i>, 2024<br>
+              desenho digital / 1242x123px
+            </figcaption>
+          </figure>
+
+          <!-- OBRA 09 -->
+          <figure class="work work-large-right">
+            <a href="#obra-09" class="work-image">
+              <img src="imagens/IMG_0201.jpg" alt="060324 6 cadeiras 6 cabeças, 2024" loading="lazy">
+            </a>
+            <figcaption>
+              <i>060324 6 cadeiras 6 cabeças</i>, 2024<br>
+              desenho digitalizado / 1242x123px
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+
+      <!-- 2. SUB-SEÇÃO: VÍDEOS -->
+      <div id="sub-videos" class="sub-pane">
+        <div class="videos-grid">
+          <figure class="video-work">
+            <div class="video-container">
+              <iframe
+                src="https://player.vimeo.com/video/1216190846"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <figcaption>
+              <i>PARA SEMPRE GRAVADO NA MEMÓRIA</i>, 2026<br>
+              vídeo, 03'19"
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- 3. SUB-SEÇÃO: LIVROS DE ARTISTA -->
+      <div id="sub-livros" class="sub-pane">
+        <div class="books-grid">
+
+          <a class="book-card" href="livros/a-vigilia/index.html">
+            <div class="book-cover-wrap">
+              <img src="livros/a-vigilia/paginas/pagina-01.jpg" alt="Capa de A Vigília">
+            </div>
+            <div class="book-meta">
+              <i>A Vigília</i>, 2024<br>
+              livro de artista · 17 páginas<br>
+              <span class="read-action">folhear livro →</span>
+            </div>
+          </a>
+
+          <a class="book-card" href="livros/rachaduras/index.html">
+            <div class="book-cover-wrap">
+              <img src="imagens/IMG_0199.jpg" alt="Capa de Rachaduras">
+            </div>
+            <div class="book-meta">
+              <i>Rachaduras</i>, 2026<br>
+              livro de artista<br>
+              <span class="read-action">folhear livro →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- 4. SUB-SEÇÃO: ESCRITOS -->
+      <div id="sub-escritos" class="sub-pane">
+        <div class="writings-list">
+
+          <article class="writing-entry">
+            <header class="writing-header">
+              <h3>Cadernos de Vigília: notas sobre a duração da linha</h3>
+              <span class="writing-year">2026</span>
+            </header>
+            <div class="writing-body">
+              <p>
+                O gesto antecede a forma. A repetição do grafite sobre o papel opera não como representação de uma imagem prévia, mas como inscrição do tempo em estado de vigília. Desenhar é permanecer onde a visão hesita.
+              </p>
+              <p>
+                Entre o corpo e o suporte há um atrito constante: o desgaste do material revela a anatomia da superfície. Uma linha nunca é neutra; carrega o peso e o silêncio da mão que a conduz.
+              </p>
+            </div>
+          </article>
+
+          <article class="writing-entry">
+            <header class="writing-header">
+              <h3>Rachaduras e Vestígios</h3>
+              <span class="writing-year">2025</span>
+            </header>
+            <div class="writing-body">
+              <p>
+                Fragmentos colhidos nas margens do espaço habitado. A fenda não interrompe a estrutura, ela a expõe. O livro de artista enquanto corpo físico dobrável e desdobrável.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABA: CATÁLOGO
+         ===================================================== -->
+    <section id="catalogo" class="tab-pane">
+      <div class="catalogo-content">
+        <header class="catalogo-header">
+          <h2>catálogo de obras & publicações</h2>
+          <p class="catalogo-desc">
+            Índice cronológico de produções, publicações independentes e fichas técnicas completas.
+          </p>
+          <div class="catalogo-actions">
+            <a href="javascript:window.print()" class="catalogo-btn">imprimir catálogo / gerar PDF</a>
+          </div>
+        </header>
+
+        <div class="catalogo-table-wrap">
+          <table class="catalogo-table">
+            <thead>
+              <tr>
+                <th>Ano</th>
+                <th>Título</th>
+                <th>Categoria</th>
+                <th>Técnica / Suporte</th>
+                <th>Dimensões / Duração</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2026</td>
+                <td><i>PARA SEMPRE GRAVADO NA MEMÓRIA</i></td>
+                <td>Vídeo</td>
+                <td>Vídeo monocromático / som direto</td>
+                <td>03'19"</td>
+              </tr>
+              <tr>
+                <td>2026</td>
+                <td><i>Rachaduras</i></td>
+                <td>Livro de Artista</td>
+                <td>Publicação independente, costura manual</td>
+                <td>Edição limitada</td>
+              </tr>
+              <tr>
+                <td>2026</td>
+                <td><i>S/T</i></td>
+                <td>Desenho</td>
+                <td>Lápis pastel sobre papel</td>
+                <td>170 × 1143 mm</td>
+              </tr>
+              <tr>
+                <td>2026</td>
+                <td><i>S/T</i></td>
+                <td>Desenho</td>
+                <td>Lápis pastel sobre papel</td>
+                <td>681 × 1134 mm</td>
+              </tr>
+              <tr>
+                <td>2025</td>
+                <td><i>S/T</i></td>
+                <td>Desenho</td>
+                <td>Lápis 8b sobre papel algodão</td>
+                <td>5871 × 4176 px / ref. estúdio</td>
+              </tr>
+              <tr>
+                <td>2025</td>
+                <td><i>S/T</i></td>
+                <td>Desenho</td>
+                <td>Lápis 8b sobre papel</td>
+                <td>3047 × 3184 px</td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td><i>A Vigília</i></td>
+                <td>Livro de Artista</td>
+                <td>Impressão gráfica e desenho</td>
+                <td>17 páginas</td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td><i>chão 250324</i></td>
+                <td>Desenho digital</td>
+                <td>Inscrição digitalizada</td>
+                <td>1242 × 123 px</td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td><i>060324 6 cadeiras 6 cabeças</i></td>
+                <td>Desenho digital</td>
+                <td>Desenho digitalizado</td>
+                <td>1242 × 123 px</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         ABA: SOBRE
+         ===================================================== -->
+    <section id="sobre" class="tab-pane">
+      <div class="about-grid">
+
+        <div class="about-column">
+          <p class="about-lead">
+            Solaries M. Schuster é artista visual e pesquisador(a). Sua prática investiga os limites do desenho, livros de artista, vídeo e temporalidades poéticas.
+          </p>
+          <p>
+            Trabalha a partir da tensão entre o suporte físico e o registro temporal, explorando grafite, lápis pastel, procedimentos digitais e a espacialidade das publicações de tiragem reduzida.
+          </p>
+          <p class="about-location">
+            Florianópolis, Santa Catarina — Brasil
+          </p>
+        </div>
+
+        <div class="about-column about-contact">
+          <h3>contato</h3>
+          <p>
+            <a href="mailto:solarium.solaries@gmail.com" class="contact-link">
+              solarium.solaries@gmail.com
+            </a>
+          </p>
+
+          <h3>redes & plataformas</h3>
+          <ul class="social-links">
+            <li>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                instagram ↗
+              </a>
+            </li>
+            <li>
+              <a href="https://vimeo.com" target="_blank" rel="noopener noreferrer">
+                vimeo ↗
+              </a>
+            </li>
+            <li>
+              <a href="https://behance.net" target="_blank" rel="noopener noreferrer">
+                behance ↗
+              </a>
+            </li>
+          </ul>
+
+          <div class="about-colophon">
+            <small>© 2026 Kazualkazuality · Solaries Schuster</small>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       VISUALIZAÇÃO AMPLIADA DAS OBRAS (LIGHTBOX)
+       ===================================================== -->
+  <div id="obra-01" class="lightbox">
+    <a href="#trabalhos" class="lightbox-close" title="Fechar">×</a>
+    <div class="lightbox-content">
+      <img src="imagens/image (4).png" alt="S/T, 2026">
+      <div class="lightbox-caption">
+        <i>S/T</i>, 2026<br>
+        desenho, lápis pastel / 170x1143px
+      </div>
+    </div>
+  </div>
+
+  <div id="obra-02" class="lightbox">
+    <a href="#trabalhos" class="lightbox-close" title="Fechar">×</a>
+    <div class="lightbox-content">
+      <img src="imagens/image (3).png" alt="S/T, 2026">
+      <div class="lightbox-caption">
+        <i>S/T</i>, 2026<br>
+        desenho, lápis pastel / 681x1134px
+      </div>
+    </div>
+  </div>
+
+  <div id="obra-03" class="lightbox">
+    <a href="#trabalhos" class="lightbox-close" title="Fechar">×</a>
+    <div class="lightbox-content">
+      <img src="imagens/IMG_0204.jpg" alt="S/T, 2024">
+      <div class="lightbox-caption">
+        <i>S/T</i>, 2024<br>
+        desenho, lápis 8b / 1242x1305px
+      </div>
+    </div>
+  </div>
+
+  <div id="obra-04" class="lightbox">
+    <a href="#trabalhos" class="lightbox-close" title="Fechar">×</a>
+    <div class="lightbox-content">
+      <img src="imagens/img005.jpg" alt="S/T, 2025">
+      <div class="lightbox-caption">
+        <i>S/T</i>, 2025<br>
+        desenho, lápis 8b / 5871x4176px
+      </div>
+    </div>
+  </div>
+
+  <div id="obra-05" class="lightbox">
+    <a href="#trabalhos" class="lightbox-close" title="Fechar">×</a>
+    <div class="lightbox-content">
+      <img src="imagens/img033.jpg" alt="S/T, 2025">
+      <div class="lightbox-caption">
+        <i>S/T</i>, 2025<br>
+        desenho, lápis 8b / 3047x3184px
+      </div>
+    </div>
+  </div>
+
+  <div id="obra-06" class="lightbox">
+    <a href="#trabalhos" class="lightbox-close" title="Fechar">×</a>
+    <div class="lightbox-content">
+      <img src="imagens/img032 (1).jpg" alt="S/T, 2024">
+      <div class="lightbox-caption">
+        <i>S/T</i>, 2024<br>
+        desenho, lápis 8b / 2959x3408px
+      </div>
+    </div>
+  </div>
+
+  <div id="obra-07" class="lightbox">
+    <a href="#trabalhos" class="lightbox-close" title="Fechar">×</a>
+    <div class="lightbox-content">
+      <img src="imagens/IMG_0203.jpg" alt="chão 250324, 2024">
+      <div class="lightbox-caption">
+        <i>chão 250324</i>, 2024<br>
+        desenho digital / 1242x123px
+      </div>
+    </div>
+  </div>
+
+  <div id="obra-08" class="lightbox">
+    <a href="#trabalhos" class="lightbox-close" title="Fechar">×</a>
+    <div class="lightbox-content">
+      <img src="imagens/IMG_0202.jpg" alt="chão 250324, 2024">
+      <div class="lightbox-caption">
+        <i>chão 250324</i>, 2024<br>
+        desenho digital / 1242x123px
+      </div>
+    </div>
+  </div>
+
+  <div id="obra-09" class="lightbox">
+    <a href="#trabalhos" class="lightbox-close" title="Fechar">×</a>
+    <div class="lightbox-content">
+      <img src="imagens/IMG_0201.jpg" alt="060324 6 cadeiras 6 cabeças, 2024">
+      <div class="lightbox-caption">
+        <i>060324 6 cadeiras 6 cabeças</i>, 2024<br>
+        desenho digitalizado / 1242x123px
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts de controle da interface e abas -->
+  <script src="script.js"></script>
+</body>
+</html>

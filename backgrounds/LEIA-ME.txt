@@ -1,0 +1,26 @@
+﻿# Instruções para o Plano de Fundo (Background)
+
+Você pode usar qualquer um dos seguintes formatos como plano de fundo:
+- **Vídeo**: .mp4 ou .webm (recomendado: 1080p, sem áudio ou silencioso)
+- **GIF animado**: .gif
+- **Imagem estática**: .jpg, .jpeg, .png, .webp
+
+## Como trocar no index.html:
+
+Abra o arquivo index.html e localize a tag <div class= site-bg>:
+
+1. **Para usar VÍDEO**:
+   Coloque seu vídeo na pasta ackgrounds/ (por exemplo: ackgrounds/meu-video.mp4) e use:
+   `html
+   <video class=bg-media autoplay muted loop playsinline>
+     <source src=backgrounds/meu-video.mp4 type=video/mp4>
+   </video>
+   `
+
+2. **Para usar GIF ou IMAGEM (JPG / PNG)**:
+   Coloque sua imagem ou GIF na pasta ackgrounds/ (por exemplo: ackgrounds/meu-fundo.gif) e use:
+   `html
+   <img class=bg-media src=backgrounds/meu-fundo.gif alt=Plano de Fundo>
+   `
+
+Ajuste a transparência da camada de proteção no arquivo style.css na variável --bg-overlay-opacity se desejar deixar o fundo mais escuro, mais claro ou 100% visível!
