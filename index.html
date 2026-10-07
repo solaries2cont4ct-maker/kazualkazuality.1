@@ -4,6 +4,198 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Solaries Schuster — kazualkazuality</title>
+  
+  <!-- Estilos essenciais incorporados para garantir 100% de precisão mesmo se houver cache -->
+  <style>
+    /* =====================================================
+       CABEÇALHO LATERAL ESQUERDO (ABAIXO DO NOME)
+       ===================================================== */
+    .site-header {
+      position: fixed !important;
+      top: 28px !important;
+      left: 32px !important;
+      z-index: 50 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 18px !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      width: auto !important;
+    }
+
+    .artist-name {
+      display: block !important;
+      font-size: 16px !important;
+      letter-spacing: 0.02em !important;
+      font-weight: normal !important;
+      color: #111 !important;
+      text-decoration: none !important;
+      margin: 0 !important;
+    }
+
+    .main-nav {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 7px !important;
+      font-size: 14px !important;
+    }
+
+    .main-nav .nav-link {
+      color: #111 !important;
+      text-decoration: none !important;
+      opacity: 0.85 !important;
+      padding: 2px 0 !important;
+    }
+
+    .main-nav .nav-link:hover,
+    .main-nav .nav-link.active {
+      opacity: 1 !important;
+      text-decoration: underline !important;
+      text-underline-offset: 4px !important;
+    }
+
+    /* =====================================================
+       CONTEÚDO PRINCIPAL (POSICIONADO À DIREITA DO MENU)
+       ===================================================== */
+    .main-content {
+      position: relative !important;
+      z-index: 10 !important;
+      margin-left: 210px !important;
+      margin-top: 28px !important;
+      margin-right: 32px !important;
+      margin-bottom: 60px !important;
+      max-width: 980px !important;
+      background: rgba(255, 255, 255, 0.96) !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      padding: 36px 40px 60px !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    body.is-home .main-content {
+      display: none !important;
+    }
+
+    /* =====================================================
+       FLASHES DE TATUAGEM (RIGOROSAMENTE 150px A 180px)
+       ===================================================== */
+    .flashes-section {
+      width: 100% !important;
+    }
+
+    .flashes-grid {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 20px 18px !important;
+      align-items: start !important;
+    }
+
+    .flash-card {
+      width: 160px !important;
+      max-width: 180px !important;
+      min-width: 150px !important;
+      margin: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .flash-image-link {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 160px !important;
+      height: 180px !important;
+      max-width: 180px !important;
+      max-height: 180px !important;
+      background: #ffffff !important;
+      border: 1px solid rgba(0, 0, 0, 0.1) !important;
+      padding: 8px !important;
+      cursor: zoom-in !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+    }
+
+    .flash-image-link img {
+      max-width: 100% !important;
+      max-height: 100% !important;
+      width: auto !important;
+      height: auto !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+
+    .flash-card figcaption {
+      margin-top: 6px !important;
+      font-size: 12.5px !important;
+      line-height: 1.3 !important;
+    }
+
+    .flash-status {
+      display: inline-block !important;
+      font-size: 11px !important;
+      color: #666 !important;
+    }
+
+    /* =====================================================
+       LIGHTBOX (TOTALMENTE ESCONDIDO POR PADRÃO)
+       ===================================================== */
+    .lightbox {
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 1000 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      background: rgba(255, 255, 255, 0.98) !important;
+      display: none !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 30px !important;
+      box-sizing: border-box !important;
+    }
+
+    .lightbox:target {
+      display: flex !important;
+    }
+
+    .lightbox-content {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      max-width: 90vw !important;
+      max-height: 85vh !important;
+    }
+
+    .lightbox-content img {
+      max-width: 85vw !important;
+      max-height: 75vh !important;
+      width: auto !important;
+      height: auto !important;
+      object-fit: contain !important;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .site-header {
+        position: static !important;
+        padding: 20px 16px 10px !important;
+      }
+      .main-nav {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+      }
+      .main-content {
+        margin: 16px !important;
+        padding: 24px 18px 40px !important;
+      }
+    }
+  </style>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,8 +205,6 @@
        PLANO DE FUNDO INFINITO (VÍDEO / GIF / JPG / PNG)
        ===================================================== -->
   <div class="site-bg" id="siteBg" aria-hidden="true">
-    
-    <!-- Trilho de repetição contínua para fundo infinito -->
     <div class="bg-track" id="bgTrack">
       <div class="bg-tile bg-tile-prev">
         <img class="bg-media" src="backgrounds/fundo-exemplo.jpg" alt="Plano de Fundo">
@@ -26,14 +216,12 @@
         <img class="bg-media" src="backgrounds/fundo-exemplo.jpg" alt="Plano de Fundo">
       </div>
     </div>
-
-    <!-- Película suave para leitura apenas quando abrir abas de conteúdo -->
     <div class="bg-overlay"></div>
   </div>
 
 
   <!-- =====================================================
-       CABEÇALHO SUPERIOR (SEM LINHA DIVISÓRIA, FUNDO TOTALMENTE TRANSPARENTE)
+       CABEÇALHO LATERAL ESQUERDO (ABAIXO DO NOME)
        ===================================================== -->
   <header class="site-header">
     <a class="artist-name" href="#home" title="Voltar ao início">Solaries Schuster</a>
@@ -258,15 +446,15 @@
 
 
     <!-- =====================================================
-         ABA: CATÁLOGO (FLASHES DE TATUAGEM)
+         ABA: CATÁLOGO (FLASHES DE TATUAGEM — 150px A 180px)
          ===================================================== -->
     <section id="catalogo" class="tab-pane">
       <div class="flashes-section">
         
-        <header class="flashes-header">
-          <h2>flashes de tatuagem</h2>
-          <p class="flashes-desc">
-            desenhos autorais disponíveis para tatuar · para agendamento, orçamentos ou projetos exclusivos, entre em contato via <a href="mailto:solarium.solaries@gmail.com">e-mail</a> ou <a href="https://instagram.com" target="_blank" rel="noopener">instagram</a>.
+        <header class="flashes-header" style="margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid rgba(0,0,0,0.1);">
+          <h2 style="font-size: 17px; font-weight: normal; margin: 0 0 6px;">flashes de tatuagem</h2>
+          <p class="flashes-desc" style="font-size: 13.5px; color: #666; margin: 0; line-height: 1.5;">
+            desenhos autorais disponíveis para tatuar · para agendamento, orçamentos ou projetos exclusivos, entre em contato via <a href="mailto:solarium.solaries@gmail.com" style="text-decoration: underline;">e-mail</a> ou <a href="https://instagram.com" target="_blank" rel="noopener" style="text-decoration: underline;">instagram</a> · <a href="flashes/index.html" style="text-decoration: underline;">abrir página dedicada de flashes ↗</a>
           </p>
         </header>
 
@@ -274,8 +462,8 @@
 
           <!-- FLASH 01 -->
           <figure class="flash-card">
-            <a href="#flash-01" class="flash-image-link">
-              <img src="flashes/catalogo 1.png" alt="Flash 01" loading="lazy">
+            <a href="#flash-01" class="flash-image-link" title="Clique para ampliar">
+              <img src="flashes/flash-01.jpg" alt="Flash 01" loading="lazy">
             </a>
             <figcaption>
               <i>Flash 01</i><br>
@@ -285,8 +473,8 @@
 
           <!-- FLASH 02 -->
           <figure class="flash-card">
-            <a href="#flash-02" class="flash-image-link">
-              <img src="flashes/catalogo 2.png" alt="Flash 02" loading="lazy">
+            <a href="#flash-02" class="flash-image-link" title="Clique para ampliar">
+              <img src="flashes/flash-02.jpg" alt="Flash 02" loading="lazy">
             </a>
             <figcaption>
               <i>Flash 02</i><br>
@@ -296,8 +484,8 @@
 
           <!-- FLASH 03 -->
           <figure class="flash-card">
-            <a href="#flash-03" class="flash-image-link">
-              <img src="flashes/catalogo 3.png" alt="Flash 03" loading="lazy">
+            <a href="#flash-03" class="flash-image-link" title="Clique para ampliar">
+              <img src="flashes/flash-03.jpg" alt="Flash 03" loading="lazy">
             </a>
             <figcaption>
               <i>Flash 03</i><br>
@@ -307,8 +495,8 @@
 
           <!-- FLASH 04 -->
           <figure class="flash-card">
-            <a href="#flash-04" class="flash-image-link">
-              <img src="flashes/catalogo 4.png" alt="Flash 04" loading="lazy">
+            <a href="#flash-04" class="flash-image-link" title="Clique para ampliar">
+              <img src="flashes/flash-04.jpg" alt="Flash 04" loading="lazy">
             </a>
             <figcaption>
               <i>Flash 04</i><br>
@@ -318,8 +506,8 @@
 
           <!-- FLASH 05 -->
           <figure class="flash-card">
-            <a href="#flash-05" class="flash-image-link">
-              <img src="flashes/catalogo 5.png" alt="Flash 05" loading="lazy">
+            <a href="#flash-05" class="flash-image-link" title="Clique para ampliar">
+              <img src="flashes/flash-05.jpg" alt="Flash 05" loading="lazy">
             </a>
             <figcaption>
               <i>Flash 05</i><br>
@@ -329,7 +517,7 @@
 
           <!-- FLASH 06 -->
           <figure class="flash-card">
-            <a href="#flash-06" class="flash-image-link">
+            <a href="#flash-06" class="flash-image-link" title="Clique para ampliar">
               <img src="flashes/flash-06.jpg" alt="Flash 06" loading="lazy">
             </a>
             <figcaption>
@@ -340,7 +528,7 @@
 
           <!-- FLASH 07 -->
           <figure class="flash-card">
-            <a href="#flash-07" class="flash-image-link">
+            <a href="#flash-07" class="flash-image-link" title="Clique para ampliar">
               <img src="flashes/flash-07.png" alt="Flash 07" loading="lazy">
             </a>
             <figcaption>
@@ -351,7 +539,7 @@
 
           <!-- FLASH 08 -->
           <figure class="flash-card">
-            <a href="#flash-08" class="flash-image-link">
+            <a href="#flash-08" class="flash-image-link" title="Clique para ampliar">
               <img src="flashes/flash-08.png" alt="Flash 08" loading="lazy">
             </a>
             <figcaption>
@@ -362,7 +550,7 @@
 
           <!-- FLASH 09 -->
           <figure class="flash-card">
-            <a href="#flash-09" class="flash-image-link">
+            <a href="#flash-09" class="flash-image-link" title="Clique para ampliar">
               <img src="flashes/flash-09.png" alt="Flash 09" loading="lazy">
             </a>
             <figcaption>
@@ -373,7 +561,7 @@
 
           <!-- FLASH 10 -->
           <figure class="flash-card">
-            <a href="#flash-10" class="flash-image-link">
+            <a href="#flash-10" class="flash-image-link" title="Clique para ampliar">
               <img src="flashes/flash-10.png" alt="Flash 10" loading="lazy">
             </a>
             <figcaption>
@@ -525,7 +713,7 @@
   <div id="flash-01" class="lightbox">
     <a href="#catalogo" class="lightbox-close" title="Fechar">×</a>
     <div class="lightbox-content">
-      <img src="flashes/flash-01.jpg" alt="Flash 01">
+      <img src="flashes/catalogo 1.png" alt="Flash 01">
       <div class="lightbox-caption"><i>Flash 01</i> · disponível para tatuar</div>
     </div>
   </div>
@@ -533,7 +721,7 @@
   <div id="flash-02" class="lightbox">
     <a href="#catalogo" class="lightbox-close" title="Fechar">×</a>
     <div class="lightbox-content">
-      <img src="flashes/flash-02.jpg" alt="Flash 02">
+      <img src="flashes/catalogo 2.png" alt="Flash 02">
       <div class="lightbox-caption"><i>Flash 02</i> · disponível para tatuar</div>
     </div>
   </div>
@@ -541,7 +729,7 @@
   <div id="flash-03" class="lightbox">
     <a href="#catalogo" class="lightbox-close" title="Fechar">×</a>
     <div class="lightbox-content">
-      <img src="flashes/flash-03.jpg" alt="Flash 03">
+      <img src="flashes/catalogo 3.png" alt="Flash 03">
       <div class="lightbox-caption"><i>Flash 03</i> · disponível para tatuar</div>
     </div>
   </div>
@@ -549,7 +737,7 @@
   <div id="flash-04" class="lightbox">
     <a href="#catalogo" class="lightbox-close" title="Fechar">×</a>
     <div class="lightbox-content">
-      <img src="flashes/flash-04.jpg" alt="Flash 04">
+      <img src="flashes/catalogo 4.png" alt="Flash 04">
       <div class="lightbox-caption"><i>Flash 04</i> · disponível para tatuar</div>
     </div>
   </div>
@@ -557,7 +745,7 @@
   <div id="flash-05" class="lightbox">
     <a href="#catalogo" class="lightbox-close" title="Fechar">×</a>
     <div class="lightbox-content">
-      <img src="flashes/flash-05.jpg" alt="Flash 05">
+      <img src="flashes/catalogo 5.png" alt="Flash 05">
       <div class="lightbox-caption"><i>Flash 05</i> · disponível para tatuar</div>
     </div>
   </div>
