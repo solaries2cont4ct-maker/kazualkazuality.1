@@ -508,6 +508,23 @@ body.is-home .main-content {
   background: rgba(0, 0, 0, 0.02);
 }
 
+/* =====================================================
+   FLASHES
+   ===================================================== */
+
+.flash{
+  position:fixed;
+
+  width:120px;
+  height:auto;
+
+  max-width:none;
+
+  z-index:1000;
+
+  pointer-events:none;
+}
+
 
 /* =====================================================
    SOBRE
