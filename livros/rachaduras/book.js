@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  const NUM_PAGES = 1;
+  const NUM_PAGES = 16;
   const extensions = ["jpg", "jpeg", "png", "webp"];
 
   let current = 1;
