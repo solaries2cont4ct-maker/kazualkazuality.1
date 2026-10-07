@@ -88,20 +88,54 @@ body.tab-open .bg-overlay {
 /* =====================================================
    CABEÇALHO SUPERIOR (FIXO & MINIMALISTA)
    ===================================================== */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  width: 100%;
-  padding: 22px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border-light);
-  transition: background 0.3s ease;
+.site-header{
+  width:100%;
+  padding:14px 14px 20px 14px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+
+  background:#fff;
+
+  border:0;
+  border-bottom:none;
+  box-shadow:none;
+}
+
+.artist-name{
+  display:block;
+
+  color:#111;
+  text-decoration:none;
+
+  font-family:"Times New Roman", Times, serif;
+  font-size:14px;
+
+  margin:0 0 8px 0;
+}
+
+.site-header nav{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+
+  gap:1px;
+}
+
+.site-header nav a{
+  color:#111;
+  text-decoration:none;
+
+  font-family:"Times New Roman", Times, serif;
+  font-size:12px;
+
+  margin:0;
+  padding:0;
+}
+
+.site-header nav a:hover{
+  text-decoration:underline;
 }
 
 .artist-name {
