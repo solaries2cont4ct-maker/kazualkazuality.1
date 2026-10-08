@@ -1,38 +1,44 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Flashes de Tatuagem — Solaries Schuster</title>
+
   <style>
-    /* =====================================================
-       ESTILOS DO CATÁLOGO DE FLASHES (150px x 180px)
-       ===================================================== */
+
+    /* ================================
+       CONFIGURAÇÕES GERAIS
+       ================================ */
+
     :root {
       --bg: #ffffff;
       --text: #111111;
       --muted: #666666;
       --border: rgba(0, 0, 0, 0.12);
-      
-      /* Dimensões específicas dos flashes solicitadas */
-      --flash-w: 150px;
-      --flash-max-w: 180px;
-      --flash-h: 180px;
+
+      --flash-width: 150px;
+      --flash-height: 140px;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html,
     body {
       margin: 0;
       padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Times New Roman", Times, Georgia, serif;
+      background: #ffffff;
+      color: #111111;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    body {
       font-size: 16px;
       line-height: 1.35;
-      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -44,105 +50,157 @@
       text-decoration: underline;
     }
 
-    /* Cabeçalho */
+
+    /* ================================
+       CABEÇALHO
+       ================================ */
+
     header {
-      padding: 24px 36px;
+      width: 100%;
+      padding: 18px 24px 20px;
+
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 1px solid var(--border);
+      flex-direction: column;
+      align-items: flex-start;
+
+      background: #ffffff;
+
+      border: none;
+      box-shadow: none;
     }
 
     .artist-name {
-      font-size: 17px;
-      letter-spacing: 0.02em;
+      font-size: 14px;
+      margin-bottom: 8px;
     }
 
     .back-link {
-      font-size: 14.5px;
-      color: var(--muted);
-      transition: color 0.2s ease;
+      font-size: 12px;
+      color: #111111;
     }
 
-    .back-link:hover {
-      color: var(--text);
-    }
 
-    /* Container principal */
+    /* ================================
+       CONTEÚDO
+       ================================ */
+
     main {
+      width: 100%;
       max-width: 1100px;
-      margin: 36px auto 70px;
-      padding: 0 36px;
+
+      margin: 0 auto;
+      padding: 0 32px 70px;
     }
+
+
+    /* ================================
+       TÍTULO
+       ================================ */
 
     .catalog-title {
-      margin-bottom: 32px;
-      padding-bottom: 16px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+
       border-bottom: 1px solid var(--border);
     }
 
     .catalog-title h1 {
-      font-size: 20px;
+      margin: 0 0 6px;
+
+      font-size: 16px;
       font-weight: normal;
-      margin: 0 0 8px;
     }
 
     .catalog-title p {
-      font-size: 14.5px;
-      color: var(--muted);
       margin: 0;
+
+      font-size: 12px;
       line-height: 1.5;
+
+      color: var(--muted);
     }
 
-    /* =====================================================
-       GRADE DE FLASHES (AJUSTADA A 150px - 180px)
-       ===================================================== */
-    .flashes-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px 20px;
-      align-items: start;
+    .catalog-title a {
+      text-decoration: underline;
     }
+
+
+    /* ================================
+       GRADE DE FLASHES
+       ================================ */
+
+    .flashes-container {
+      display: grid;
+
+      grid-template-columns: repeat(5, 1fr);
+
+      gap: 24px 12px;
+    }
+
+
+    /* ================================
+       ITEM
+       ================================ */
 
     .flash-item {
-      display: flex;
-      flex-direction: column;
-      width: var(--flash-w);
-      max-width: var(--flash-max-w);
-      flex: 1 1 var(--flash-w);
+      width: 100%;
+      min-width: 0;
     }
+
+
+    /* ================================
+       MINIATURA
+       ================================ */
 
     .flash-card {
       width: 100%;
-      height: var(--flash-h);
+      height: var(--flash-height);
+
       background: #ffffff;
+
       border: 1px solid var(--border);
+
       padding: 10px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       cursor: zoom-in;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .flash-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+
       border-color: rgba(0, 0, 0, 0.25);
     }
 
     .flash-card img {
+      display: block;
+
       width: 100%;
       height: 100%;
-      max-width: var(--flash-max-w);
-      max-height: var(--flash-h);
+
       object-fit: contain;
-      display: block;
     }
 
+
+    /* ================================
+       TEXTO DO FLASH
+       ================================ */
+
     .flash-info {
-      margin-top: 8px;
-      font-size: 13px;
+      margin-top: 6px;
+
+      font-size: 12px;
       line-height: 1.3;
     }
 
@@ -152,346 +210,471 @@
 
     .flash-badge {
       display: block;
-      font-size: 11.5px;
-      color: #777;
-      margin-top: 2px;
+
+      margin-top: 1px;
+
+      font-size: 11px;
+
+      color: #777777;
     }
 
-    /* =====================================================
-       LIGHTBOX (VISUALIZAÇÃO AMPLIADA)
-       ===================================================== */
+
+    /* ================================
+       LIGHTBOX
+       ================================ */
+
     .lightbox {
       position: fixed;
       inset: 0;
+
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.98);
+
       display: none;
+
       align-items: center;
       justify-content: center;
+
       padding: 30px;
+
+      background: rgba(255, 255, 255, 0.98);
     }
 
     .lightbox.active {
       display: flex;
-      animation: fadeIn 0.2s ease forwards;
     }
 
     .lightbox-inner {
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
       justify-content: center;
+
       max-width: 90vw;
-      max-height: 85vh;
+      max-height: 90vh;
     }
 
     .lightbox-inner img {
+      display: block;
+
       max-width: 85vw;
       max-height: 75vh;
+
+      width: auto;
+      height: auto;
+
       object-fit: contain;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
 
     .lightbox-caption {
       margin-top: 14px;
+
       font-size: 14px;
+
       text-align: center;
     }
 
     .lightbox-close {
       position: absolute;
-      top: 20px;
-      right: 28px;
-      font-size: 32px;
-      line-height: 1;
+
+      top: 15px;
+      right: 24px;
+
       border: none;
       background: none;
+
+      font-family: "Times New Roman", Times, serif;
+      font-size: 28px;
+
+      color: #111111;
+
       cursor: pointer;
-      font-family: inherit;
-      color: var(--text);
-      opacity: 0.6;
-      transition: opacity 0.2s ease;
     }
 
-    .lightbox-close:hover {
-      opacity: 1;
-    }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    /* ================================
+       RESPONSIVO
+       ================================ */
 
-    /* Responsivo */
-    @media (max-width: 600px) {
-      header {
-        padding: 18px 20px;
-      }
+    @media (max-width: 800px) {
+
       main {
-        padding: 0 20px;
-        margin: 24px auto 50px;
+        padding-left: 20px;
+        padding-right: 20px;
       }
+
       .flashes-container {
-        gap: 16px 12px;
-        justify-content: center;
+        grid-template-columns: repeat(3, 1fr);
       }
-      .flash-item {
-        width: 140px;
-        max-width: 160px;
-      }
-      .flash-card {
-        height: 160px;
-      }
+
     }
+
+
+    @media (max-width: 500px) {
+
+      .flashes-container {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 20px 10px;
+      }
+
+      .flash-card {
+        height: 150px;
+      }
+
+    }
+
   </style>
 </head>
+
+
 <body>
 
-  <!-- =====================================================
+
+  <!-- ================================
        CABEÇALHO
-       ===================================================== -->
+       ================================ -->
+
   <header>
-    <a class="artist-name" href="../index.html">Solaries Schuster</a>
-    <a class="back-link" href="../index.html#catalogo">← voltar para o site</a>
+
+    <a
+      class="artist-name"
+      href="../index.html"
+    >
+      Solaries Schuster
+    </a>
+
+    <a
+      class="back-link"
+      href="../index.html#catalogo"
+    >
+      ← voltar para o site
+    </a>
+
   </header>
 
-  <!-- =====================================================
-       CATÁLOGO DE FLASHES
-       ===================================================== -->
+
+  <!-- ================================
+       CATÁLOGO
+       ================================ -->
+
   <main>
+
     <div class="catalog-title">
-      <h1>catálogo de flashes de tatuagem</h1>
+
+      <h1>flashes de tatuagem</h1>
+
       <p>
-        desenhos autorais disponíveis para tatuar · ajustados na escala 150px a 180px · para agendamentos ou orçamentos: 
-        <a href="mailto:solarium.solaries@gmail.com">solarium.solaries@gmail.com</a>
+        desenhos autorais disponíveis para tatuar ·
+        para agendamento, orçamentos ou projetos exclusivos,
+        entre em contato via
+        <a href="mailto:solarium.solaries@gmail.com">e-mail</a>
+        ou
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">instagram</a>.
       </p>
+
     </div>
 
-    <!-- Grade dinâmica de flashes -->
-    <div class="flashes-container" id="flashesContainer">
+
+    <!-- ================================
+         FLASHES
+         ================================ -->
+
+    <div class="flashes-container">
+
 
       <!-- FLASH 01 -->
+
       <div class="flash-item">
-        <div class="flash-card" data-src="flash-01.jpg" data-title="Flash 01">
-          <img src="catalogo 1.png" alt="Flash 01" loading="lazy">
+
+        <div
+          class="flash-card"
+          data-src="catalogo 1.png"
+          data-title="Flash 01"
+        >
+
+          <img
+            src="catalogo 1.png"
+            alt="Flash 01"
+          >
+
         </div>
+
         <div class="flash-info">
+
           <i>Flash 01</i>
-          <span class="flash-badge">disponível</span>
+
+          <span class="flash-badge">
+            disponível
+          </span>
+
         </div>
+
       </div>
+
 
       <!-- FLASH 02 -->
+
       <div class="flash-item">
-        <div class="flash-card" data-src="flash-02.jpg" data-title="Flash 02">
-          <img src="catalogo 2.png" alt="Flash 02" loading="lazy">
+
+        <div
+          class="flash-card"
+          data-src="catalogo 2.png"
+          data-title="Flash 02"
+        >
+
+          <img
+            src="catalogo 2.png"
+            alt="Flash 02"
+          >
+
         </div>
+
         <div class="flash-info">
+
           <i>Flash 02</i>
-          <span class="flash-badge">disponível</span>
+
+          <span class="flash-badge">
+            disponível
+          </span>
+
         </div>
+
       </div>
+
 
       <!-- FLASH 03 -->
+
       <div class="flash-item">
-        <div class="flash-card" data-src="flash-03.jpg" data-title="Flash 03">
-          <img src="catalogo 3.png" alt="Flash 03" loading="lazy">
+
+        <div
+          class="flash-card"
+          data-src="catalogo 3.png"
+          data-title="Flash 03"
+        >
+
+          <img
+            src="catalogo 3.png"
+            alt="Flash 03"
+          >
+
         </div>
+
         <div class="flash-info">
+
           <i>Flash 03</i>
-          <span class="flash-badge">disponível</span>
+
+          <span class="flash-badge">
+            disponível
+          </span>
+
         </div>
+
       </div>
+
 
       <!-- FLASH 04 -->
+
       <div class="flash-item">
-        <div class="flash-card" data-src="flash-04.jpg" data-title="Flash 04">
-          <img src="catalogo 4.png" alt="Flash 04" loading="lazy">
+
+        <div
+          class="flash-card"
+          data-src="catalogo 4.png"
+          data-title="Flash 04"
+        >
+
+          <img
+            src="catalogo 4.png"
+            alt="Flash 04"
+          >
+
         </div>
+
         <div class="flash-info">
+
           <i>Flash 04</i>
-          <span class="flash-badge">disponível</span>
+
+          <span class="flash-badge">
+            disponível
+          </span>
+
         </div>
+
       </div>
+
 
       <!-- FLASH 05 -->
+
       <div class="flash-item">
-        <div class="flash-card" data-src="flash-05.jpg" data-title="Flash 05">
-          <img src="catalogo 5.png" alt="Flash 05" loading="lazy">
+
+        <div
+          class="flash-card"
+          data-src="catalogo 5.png"
+          data-title="Flash 05"
+        >
+
+          <img
+            src="catalogo 5.png"
+            alt="Flash 05"
+          >
+
         </div>
+
         <div class="flash-info">
+
           <i>Flash 05</i>
-          <span class="flash-badge">disponível</span>
+
+          <span class="flash-badge">
+            disponível
+          </span>
+
         </div>
+
       </div>
 
-      <!-- FLASH 06 -->
-      <div class="flash-item">
-        <div class="flash-card" data-src="flash-06.jpg" data-title="Flash 06">
-          <img src="flash-06.jpg" alt="Flash 06" loading="lazy">
-        </div>
-        <div class="flash-info">
-          <i>Flash 06</i>
-          <span class="flash-badge">disponível</span>
-        </div>
-      </div>
-
-      <!-- FLASH 07 -->
-      <div class="flash-item">
-        <div class="flash-card" data-src="flash-07.png" data-title="Flash 07">
-          <img src="flash-07.png" alt="Flash 07" loading="lazy">
-        </div>
-        <div class="flash-info">
-          <i>Flash 07</i>
-          <span class="flash-badge">disponível</span>
-        </div>
-      </div>
-
-      <!-- FLASH 08 -->
-      <div class="flash-item">
-        <div class="flash-card" data-src="flash-08.png" data-title="Flash 08">
-          <img src="flash-08.png" alt="Flash 08" loading="lazy">
-        </div>
-        <div class="flash-info">
-          <i>Flash 08</i>
-          <span class="flash-badge">disponível</span>
-        </div>
-      </div>
-
-      <!-- FLASH 09 -->
-      <div class="flash-item">
-        <div class="flash-card" data-src="flash-09.png" data-title="Flash 09">
-          <img src="flash-09.png" alt="Flash 09" loading="lazy">
-        </div>
-        <div class="flash-info">
-          <i>Flash 09</i>
-          <span class="flash-badge">disponível</span>
-        </div>
-      </div>
-
-      <!-- FLASH 10 -->
-      <div class="flash-item">
-        <div class="flash-card" data-src="flash-10.png" data-title="Flash 10">
-          <img src="flash-10.png" alt="Flash 10" loading="lazy">
-        </div>
-        <div class="flash-info">
-          <i>Flash 10</i>
-          <span class="flash-badge">disponível</span>
-        </div>
-      </div>
 
     </div>
+
   </main>
 
-  <!-- =====================================================
-       LIGHTBOX MODAL
-       ===================================================== -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose" title="Fechar (Esc)">×</button>
+
+  <!-- ================================
+       LIGHTBOX
+       ================================ -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+  >
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      aria-label="Fechar"
+    >
+      ×
+    </button>
+
+
     <div class="lightbox-inner">
-      <img id="lightboxImg" src="" alt="">
-      <div class="lightbox-caption" id="lightboxCaption"></div>
+
+      <img
+        id="lightboxImg"
+        src=""
+        alt=""
+      >
+
+      <div
+        class="lightbox-caption"
+        id="lightboxCaption"
+      ></div>
+
     </div>
+
   </div>
 
+
+  <!-- ================================
+       JAVASCRIPT DO CATÁLOGO
+       ================================ -->
+
   <script>
-    (function () {
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightboxImg');
-      const lightboxCaption = document.getElementById('lightboxCaption');
-      const lightboxClose = document.getElementById('lightboxClose');
 
-      // Abre o lightbox ao clicar em qualquer cartão
-      document.querySelectorAll('.flash-card').forEach(card => {
-        card.addEventListener('click', function () {
-          const src = this.getAttribute('data-src');
-          const title = this.getAttribute('data-title');
+    const lightbox =
+      document.getElementById("lightbox");
+
+    const lightboxImg =
+      document.getElementById("lightboxImg");
+
+    const lightboxCaption =
+      document.getElementById("lightboxCaption");
+
+    const lightboxClose =
+      document.getElementById("lightboxClose");
+
+
+    /* Abrir imagem */
+
+    document
+      .querySelectorAll(".flash-card")
+      .forEach(card => {
+
+        card.addEventListener("click", function () {
+
+          const src =
+            this.getAttribute("data-src");
+
+          const title =
+            this.getAttribute("data-title");
+
           lightboxImg.src = src;
-          lightboxCaption.innerHTML = `<i>${title}</i> · disponível para tatuar`;
-          lightbox.classList.add('active');
+
+          lightboxImg.alt = title;
+
+          lightboxCaption.innerHTML =
+            `<i>${title}</i> · disponível para tatuar`;
+
+          lightbox.classList.add("active");
+
         });
+
       });
 
-      function closeLightbox() {
-        lightbox.classList.remove('active');
-        lightboxImg.src = '';
-      }
 
-      if (lightboxClose) {
-        lightboxClose.addEventListener('click', closeLightbox);
-      }
+    /* Fechar */
 
-      lightbox.addEventListener('click', function (e) {
-        if (e.target === lightbox) {
+    function closeLightbox() {
+
+      lightbox.classList.remove("active");
+
+      lightboxImg.src = "";
+
+    }
+
+
+    lightboxClose.addEventListener(
+      "click",
+      closeLightbox
+    );
+
+
+    /* Clicar fora da imagem */
+
+    lightbox.addEventListener(
+      "click",
+      function (event) {
+
+        if (event.target === lightbox) {
+
           closeLightbox();
-        }
-      });
 
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-          closeLightbox();
-        }
-      });
-
-      /*
-        DETECTOR AUTOMÁTICO DE NOVOS FLASHES:
-        Se você adicionar novos arquivos no formato flash-11.jpg, flash-12.png, etc.,
-        este script descobre e inclui automaticamente na grade!
-      */
-      const extensions = ['jpg', 'png', 'jpeg', 'webp'];
-      const container = document.getElementById('flashesContainer');
-
-      function checkNextFlash(index) {
-        if (index > 40) return; // Limite razoável de busca
-        const num = String(index).padStart(2, '0');
-        let extIdx = 0;
-
-        function tryExt() {
-          if (extIdx >= extensions.length) return;
-          const fileName = `flash-${num}.${extensions[extIdx]}`;
-          const testImg = new Image();
-
-          testImg.onload = function () {
-            // Se encontrou uma imagem nova, cria o item na grade
-            const existing = document.querySelector(`[data-src="${fileName}"]`);
-            if (!existing) {
-              const item = document.createElement('div');
-              item.className = 'flash-item';
-              item.innerHTML = `
-                <div class="flash-card" data-src="${fileName}" data-title="Flash ${num}">
-                  <img src="${fileName}" alt="Flash ${num}" loading="lazy">
-                </div>
-                <div class="flash-info">
-                  <i>Flash ${num}</i>
-                  <span class="flash-badge">disponível</span>
-                </div>
-              `;
-              item.querySelector('.flash-card').addEventListener('click', function () {
-                lightboxImg.src = fileName;
-                lightboxCaption.innerHTML = `<i>Flash ${num}</i> · disponível para tatuar`;
-                lightbox.classList.add('active');
-              });
-              container.appendChild(item);
-            }
-            checkNextFlash(index + 1);
-          };
-
-          testImg.onerror = function () {
-            extIdx++;
-            tryExt();
-          };
-
-          testImg.src = fileName;
         }
 
-        tryExt();
       }
+    );
 
-      // Procura a partir do flash 11
-      checkNextFlash(11);
 
-    })();
+    /* Tecla ESC */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (
+          event.key === "Escape" &&
+          lightbox.classList.contains("active")
+        ) {
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
   </script>
+
+
 </body>
 </html>
-
